@@ -20,21 +20,21 @@ void testBucketingByNumberOfCycles() {
   {
     if(count<400)
     {
-      printf("low");
+      counts.lowCount++;
     }
-    elseif(count>=400 && count<=999)
+    elseif(count>=400 && count<=920)
     {
-           printf("medium");
+       counts.mediumCount++;    
     }
     else
     {
-      printf("high");
+      counts.highCount++;
     }
   }
   struct CountsByUsage counts = countBatteriesByUsage(chargeCycleCounts, numberOfBatteries);
-  assert(counts.lowCount++ == 2);
-  assert(counts.mediumCount++ == 3);
-  assert(counts.highCount++ == 1);
+  assert(counts.lowCount == 2);
+  assert(counts.mediumCount == 3);
+  assert(counts.highCount == 1);
   printf("Done counting :)\n");
 }
 
